@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "linkedlist.h": "c"
+        "linkedlist.h": "c",
+        "list": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

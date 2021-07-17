@@ -15,15 +15,18 @@ void bfs(G *g, int src)
     {
         int t = pop_front(queue);
         printf("%d ", t);
-        while (g->list[t].head != NULL)
+        N * _p = g->list[t].head;
+        while (_p != NULL)
         {
-            int node = pop_front(&g->list[t]);
+            // int node = pop_front(&g->list[t]);
+            int node = _p->data;
 
             if (!visted[node])
             {
                 visted[node] = 1;
                 push_back(queue, node);
             }
+            _p = _p->next;
         }
     }
 }
@@ -32,12 +35,14 @@ void dfs_handler(G *g, int src, int *visited)
 {
     visited[src] = 1;
     printf("%d ", src);
-
-    while (g->list[src].head != NULL)
+    N * _p=g->list[src].head;
+    while (_p != NULL)
     {
-        int node = pop_front(&g->list[src]);
+        // int node = pop_front(&g->list[src]);
+        int node = _p->data;
         if (!visited[node])
             dfs_handler(g, node, visited);
+        _p = _p->next;
     }
 }
 

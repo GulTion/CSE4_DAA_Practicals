@@ -1,6 +1,5 @@
 #include "./BFS_DFS.h"
 
-
 int main()
 {
     G *g = graph_init(6);
@@ -11,14 +10,13 @@ int main()
     add_edge(g, 4, 3, 0);
     add_edge(g, 4, 5, 0);
 
-
     // 2---1
     // |   |
     // 3---0
     // |
     // 4---5
 
-    dfs(g, 0);
-
+    printf("DFS: "); dfs(g,3);
+    printf("\nBFS: "); bfs(g,3);
     return 0;
 }
