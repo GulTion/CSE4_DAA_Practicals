@@ -29,6 +29,8 @@ void bfs(G *g, int src)
             _p = _p->next;
         }
     }
+    free(queue);
+    free(visted);
 }
 
 void dfs_handler(G *g, int src, int *visited)
@@ -49,8 +51,9 @@ void dfs_handler(G *g, int src, int *visited)
 void dfs(G *g, int src)
 {
     int *visited = (int *)malloc(g->V * sizeof(int));
-    for (int i = 0; i < g->V; i++)
-        visited[i] = 0;
+    
+    for (int i = 0; i < g->V; i++) visited[i] = 0;
 
     dfs_handler(g, src, visited);
+    free(visited);
 }
