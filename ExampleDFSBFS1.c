@@ -1,5 +1,4 @@
 #include "./BFS_DFS.h"
-// #include "./QuickSort.h"
 #include "./FKnapscak.h"
 #define LINE printf("\n");
 
@@ -12,6 +11,7 @@ int main()
     //    3---0
     //    |
     //    4---5
+
     LINE;
     printf("    2---1\n");
     printf("    |   |\n");
@@ -23,7 +23,7 @@ int main()
 
     add_edge(g, 0, 1, 0);   add_edge(g, 2, 1, 0);   
     add_edge(g, 2, 3, 0);   add_edge(g, 0, 3, 0);   
-    add_edge(g, 4, 3, 0);   dd_edge(g, 4, 5, 0);
+    add_edge(g, 4, 3, 0);   add_edge(g, 4, 5, 0);
 
     graph_print(g); LINE;
 

@@ -29,10 +29,10 @@ double * selector(struct Table *t, int row){
 }
 
 int Partition(struct Table *A, int p, int r, int row, int base){
-    double x = selector(A, base)[r];
+    double pivit = selector(A, base)[r];
     int i = p-1;
     for(int j=p;j<=r-1;j++)
-        if(selector(A, base)[j]<=x){
+        if(selector(A, base)[j]<=pivit){
             i++;
             for(int _=0; _<row;_++)
                 swap(&selector(A, _)[i], &selector(A, _)[j]);
