@@ -27,6 +27,7 @@ L * list_init(){
     L *l= (L *)malloc(sizeof(L));
     l->head = l->tail=NULL;
     l->size=0;
+    
     return l;
 }
 

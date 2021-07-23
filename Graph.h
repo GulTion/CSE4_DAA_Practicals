@@ -13,6 +13,7 @@ G *graph_init(int V)
     g->V = V;
 
     g->list = (L *)malloc(V * sizeof(L));
+    
     for (int i = 0; i < V; i++)
     {
         g->list[i].head = g->list[i].tail = NULL;

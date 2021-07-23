@@ -2,31 +2,40 @@
 
 void bfs(G *g, int src)
 {
+    //inilization of Queue using linkedList
     L *queue = list_init();
+
+    // initialization of visited array in dynamic way and size of the array is
+    // depend upon the number of vertex
     int *visted = (int *)malloc(g->V * sizeof(int));
 
+    // loop for make all value zero in visited array
     for (int i = 0; i < g->V; i++)
         visted[i] = 0;
 
+    // make `src` vertex as visited by put 1 for visited vertex
     visted[src] = 1;
+    // after visited, just put in the Queue
     push_back(queue, src);
 
+    // run the loop till queue size got 0 or queue got empty
     while (queue->size)
-    {
+    {   
+        // a temparary variable that store the poped value from the queue
         int t = pop_front(queue);
         printf("%d ", t);
-        N * _p = g->list[t].head;
-        while (_p != NULL)
+        N * tmp = g->list[t].head;
+        while (tmp != NULL)
         {
-            // int node = pop_front(&g->list[t]);
-            int node = _p->data;
+
+            int node = tmp->data;
 
             if (!visted[node])
             {
                 visted[node] = 1;
                 push_back(queue, node);
             }
-            _p = _p->next;
+            tmp = tmp->next;
         }
     }
     free(queue);

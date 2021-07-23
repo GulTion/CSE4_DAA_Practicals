@@ -2,7 +2,18 @@
     "files.associations": {
         "linkedlist.h": "c",
         "list": "cpp",
-        "quicksort.h": "c"
+        "quicksort.h": "c",
+        "bfs_dfs.h": "c",
+        "stdlib.h": "c",
+        "ExampleList.C": "cpp",
+        "*.tcc": "cpp",
+        "forward_list": "cpp",
+        "initializer_list": "cpp",
+        "limits": "cpp",
+        "regex": "cpp",
+        "type_traits": "cpp",
+        "valarray": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "workbench.settings.editor": "json"
 }

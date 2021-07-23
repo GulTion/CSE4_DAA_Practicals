@@ -1,10 +1,12 @@
 #include "./BFS_DFS.h"
 #include "./FKnapscak.h"
+
 #define LINE printf("\n");
 
 int main()
 {
     G *g = graph_init(6);
+    // int a = 4
 
     //    2---1
     //    |   |
