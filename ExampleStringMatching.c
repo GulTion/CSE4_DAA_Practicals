@@ -1,7 +1,12 @@
 #include "./StringMatching.h"
 
 int main(){
-    char *S = "abcdef";
-    char *Su = "cde";
-    printf("%d", StringMatching(S,Su));
+    char *SuperString = "Quick Brown Fox Jumps over the Lazy dog";
+    char *SubString = "a";
+
+
+    int res = StringMatching(SuperString,SubString);
+
+    if(res==-1) printf("NOT FOUND");
+    else printf("FOUND AT INDEX %d", res);
 }

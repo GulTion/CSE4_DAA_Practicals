@@ -12,7 +12,8 @@
         "limits": "cpp",
         "regex": "cpp",
         "type_traits": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "workbench.settings.editor": "json"

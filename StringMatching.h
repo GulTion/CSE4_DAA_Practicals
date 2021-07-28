@@ -2,31 +2,30 @@
 #include<stdio.h>
 
 int StringMatching(char * super, char * sub){
-    int n = strlen(super);
-    int m = strlen(sub);
-    // printf("%d %d", n,m);
-    int con=!!0;
+    int superLength = strlen(super);
+    int subLength = strlen(sub);
+
+    int isMatched=0;
     int start=-1,i,j;
     i=j=0;
 
-    while(i<=m&&j<=n){
+    while(j<subLength&&i<superLength){
         if(super[i]==sub[j]){
-            if(!con){
+            if(!isMatched){
                 start=i;
-                con=!!1;
+                isMatched=1;
             }
             j++;
         }else{
-            if(con){
-                con=!!0;
-                break;
+            if(isMatched){
+                isMatched=0;  
             }
         }
         i++;
 
     }
 
-    if(con){
+    if(isMatched){
         return start;
     }
     
