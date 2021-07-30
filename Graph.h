@@ -46,3 +46,19 @@ void graph_print(G *g)
         print_linkedlist(&g->list[i]);
     }
 }
+
+int * indegreeCalculator(G *g){
+    int * indegree = (int *)malloc(sizeof(int)*g->V);
+
+    for(int i=0;i<g->V;i++){
+        indegree[i] = 0;
+
+        N * p = g->list[i].head;
+        while(p!=NULL){
+            indegree[p->data]++;
+            p=p->next;
+        }
+    }
+
+    return indegree;
+}

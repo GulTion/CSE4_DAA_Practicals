@@ -1,5 +1,4 @@
 #include "./BFS_DFS.h"
-#include "./FKnapscak.h"
 
 #define LINE printf("\n");
 
