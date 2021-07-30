@@ -1,9 +1,10 @@
 typedef struct Table T;
 
 struct Table {
-    double * first;
-    double * second;
-    double * third;
+    double * first; // weight
+    double * second; // profit
+    double * third; // proift/weight
+    double * fourth; // index
 };
 
 void swap(double *x, double *y){
@@ -24,15 +25,19 @@ double * selector(struct Table *t, int row){
     case 2:
         return t->third;
         break;
+    case 3:
+        return t->fourth;
+        break;
 
     }
 }
 
-int Partition(struct Table *A, int p, int r, int row, int base){
-    double pivit = selector(A, base)[r];
-    int i = p-1;
-    for(int j=p;j<=r-1;j++)
-        if(selector(A, base)[j]<=pivit){
+int Partition(struct Table *A, int startingIndex, int endingIndex, int row, int sortAsPerRow){
+    // let take ending index as pivit
+    double pivit = selector(A, sortAsPerRow)[endingIndex];
+    int i = startingIndex-1;
+    for(int j=startingIndex; j <= endingIndex-1; j++)
+        if(selector(A, sortAsPerRow)[j]<=pivit){
             i++;
             for(int _=0; _<row;_++)
                 swap(&selector(A, _)[i], &selector(A, _)[j]);
@@ -40,15 +45,15 @@ int Partition(struct Table *A, int p, int r, int row, int base){
     
 
     for(int _=0; _<row;_++)
-        swap(&selector(A, _)[i+1], &selector(A, _)[r]);
+        swap(&selector(A, _)[i+1], &selector(A, _)[endingIndex]);
 
     return i+1;
 }
 
-void QuickSort(struct Table *A, int p, int r, int row, int base){
-    if(p<r){
-        int q = Partition(A, p, r, row, base);
-        QuickSort(A, p, q-1, row, base);
-        QuickSort(A, q+1, r, row, base);
+void QuickSort(struct Table *A, int startingIndex, int endingIndex, int row, int sortAsPerRow){
+    if(startingIndex < endingIndex){
+        int pivitIndex = Partition(A, startingIndex, endingIndex, row, sortAsPerRow);
+        QuickSort(A, startingIndex, pivitIndex-1, row, sortAsPerRow);
+        QuickSort(A, pivitIndex+1, endingIndex, row, sortAsPerRow);
     }
 }

@@ -2,7 +2,7 @@
 
 int main(){
     char *SuperString = "Quick Brown Fox Jumps over the Lazy dog";
-    char *SubString = "a";
+    char *SubString = "Foi";
 
 
     int res = StringMatching(SuperString,SubString);

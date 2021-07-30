@@ -16,5 +16,7 @@
         "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
-    "workbench.settings.editor": "json"
+    "workbench.settings.editor": "json",
+    "synthwave84.brightness": 1
+    
 }
