@@ -9,9 +9,10 @@ int main(){
     add_edge(g, 1, 0, 1);   add_edge(g, 6, 3, 1);   
     add_edge(g, 5, 2, 1);  
 
-    // graph_print(g);
+    graph_print(g);
 
-    printf("\n\ntopologicalSort: ");
+    printf("\ntopologicalSort: ");
+
     topologicalSorting(g);
 
     return 0;

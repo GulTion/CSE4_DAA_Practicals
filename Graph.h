@@ -3,16 +3,18 @@ typedef struct Graph G;
 
 struct Graph
 {
-    int V;
-    L *list;
+    int V; // size
+    L *list; // Array type linked list
 };
 
 G *graph_init(int V)
 {
+    // asking for the for the space
     G *g = (G *)malloc(sizeof(G));
+
     g->V = V;
 
-    g->list = (L *)malloc(V * sizeof(L));
+    g->list = (L *)malloc(V * sizeof(L)); // | | | | | | | |
     
     for (int i = 0; i < V; i++)
     {

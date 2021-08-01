@@ -1,7 +1,7 @@
 #include "./Graph.h"
 
 void topologicalSorting(G *g){
-    int * indegree = indegreeCalculator(g);
+    int * indegree = indegreeCalculator(g);// return array
 
     L * queue = list_init();
     // push the vertices that have indegree 0
@@ -9,13 +9,15 @@ void topologicalSorting(G *g){
 
     while (queue->size){
         int node = pop_front(queue);
-        printf("%d ", node);
+        
         N * p = g->list[node].head;
+
         while(p!=NULL){
             indegree[p->data]--;
             if(indegree[p->data]==0) push_back(queue, p->data);
             p=p->next;
         }
+        printf("%d ", node);
     }
 
     

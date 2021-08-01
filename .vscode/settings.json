@@ -13,7 +13,8 @@
         "regex": "cpp",
         "type_traits": "cpp",
         "valarray": "cpp",
-        "string.h": "c"
+        "string.h": "c",
+        "topoloicalsorting.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "workbench.settings.editor": "json",
