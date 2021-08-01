@@ -1,25 +1,36 @@
 #include "./Graph.h"
+#define push(data) push_back(queue, data)
+#define pop() pop_front(queue)
 
-void topologicalSorting(G *g){
-    int * indegree = indegreeCalculator(g);// return array
+void topologicalSorting(G *g)
+{
+    int K = 0;
+    int *indegree = indegreeCalculator(g); // return array
 
-    L * queue = list_init();
+    L *queue = list_init();
+
     // push the vertices that have indegree 0
-    for(int i=0;i<g->V;i++) if(indegree[i]==0) push_back(queue, i);
+    loop(g->V) if (indegree[i] == 0) push(i);
 
-    while (queue->size){
-        int node = pop_front(queue);
-        
-        N * p = g->list[node].head;
+    while (queue->size)
+    {
+        int node = pop();
 
-        while(p!=NULL){
+        N *p = g->list[node].head;
+
+        while (p != NULL)
+        {
+            // printf("%d\n", K++);
             indegree[p->data]--;
-            if(indegree[p->data]==0) push_back(queue, p->data);
-            p=p->next;
+            if (indegree[p->data] == 0)
+                push(p->data);
+            p = p->next;
         }
         printf("%d ", node);
     }
 
-    
+    free(queue);
+    free(indegree);
+
     return;
 }

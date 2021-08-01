@@ -1,21 +1,25 @@
 #include "./topoloicalSorting.h"
+#define add(u, v) add_edge(g, u, v, 1)
 
-int main(){
+int main()
+{
     G *g = graph_init(8);
 
-    add_edge(g, 7, 5, 1);   add_edge(g, 7, 6, 1);
-    add_edge(g, 5, 4, 1);   add_edge(g, 6, 4, 1);
-    add_edge(g, 2, 1, 1);   add_edge(g, 3, 1, 1);
-    add_edge(g, 1, 0, 1);   add_edge(g, 6, 3, 1);   
-    add_edge(g, 5, 2, 1);  
+    add(7, 5);
+    add(7, 6);
+    add(5, 4);
+    add(6, 4);
+    add(2, 1);
+    add(3, 1);
+    add(1, 0);
+    add(6, 3);
+    add(5, 2);
 
     graph_print(g);
 
     printf("\ntopologicalSort: ");
 
     topologicalSorting(g);
-
+    // O(V + E)
     return 0;
-
 }
-
