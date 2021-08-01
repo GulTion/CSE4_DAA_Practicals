@@ -47,7 +47,7 @@ void graph_print(G *g)
 
     loop(g->V)
     {
-        printf("%d->", i);
+        printf("%d : ", i);
         print_linkedlist(&g->list[i]);
     }
 }

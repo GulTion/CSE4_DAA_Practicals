@@ -10,7 +10,7 @@ void topologicalSorting(G *g)
     L *queue = list_init();
 
     // push the vertices that have indegree 0
-    loop(g->V) if (indegree[i] == 0) push(i);
+    loop(g->V) if (!indegree[i]) push(i);
 
     while (queue->size)
     {
@@ -20,9 +20,9 @@ void topologicalSorting(G *g)
 
         while (p != NULL)
         {
-            // printf("%d\n", K++);
+
             indegree[p->data]--;
-            if (indegree[p->data] == 0)
+            if (!indegree[p->data])
                 push(p->data);
             p = p->next;
         }

@@ -70,10 +70,10 @@ int pop_front(L *l){
 void print_linkedlist(L *l){
     N *n=l->head;
     while(n!=NULL){
-        printf("%d ",n->data);
+        printf("%d->",n->data);
         n=n->next;
     }
-    printf("\n");
+    printf("NULL\n");
 }
 
 void list_top(L *l){
