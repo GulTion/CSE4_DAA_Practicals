@@ -17,9 +17,7 @@ int main()
 
     graph_print(g);
 
-    printf("\ntopologicalSort: ");
-
-    topologicalSorting(g);
+    printf("\ntopologicalSort: "); topologicalSorting(g);
     // O(V + E)
     return 0;
 }

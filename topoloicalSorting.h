@@ -4,7 +4,7 @@
 
 void topologicalSorting(G *g)
 {
-    int K = 0;
+
     int *indegree = indegreeCalculator(g); // return array
 
     L *queue = list_init();
