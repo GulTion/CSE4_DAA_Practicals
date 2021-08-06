@@ -7,6 +7,7 @@ typedef struct Graph G;
 struct Graph
 {
     int V;   // size
+    int E;
     L *list; // Array type linked list
 };
 
@@ -27,20 +28,24 @@ G *graph_init(int V)
 
     return g;
 }
-
-void add_edge(G *g, int u, int v, int dir)
-{
-    // dir 0 = undirected edge
-    // dir 1 = directed edge
-    if (g->V >= u && g->V >= v)
+void add_edge_weight(G *g, int u, int v,int weight, int dir){
+     if (g->V >= u && g->V >= v)
     {
-        push_back(&g->list[u], v);
+        g->E++;
+        push_back_data(&g->list[u], v, weight);
         if (!dir)
-            push_back(&g->list[v], u);
+            push_back_data(&g->list[v], u, weight);
     }
     else
         printf("Invalid Edge\n");
 }
+
+void add_edge(G *g, int u, int v, int dir)
+{
+    add_edge_weight(g, u,v,0,dir);
+}
+
+
 
 void graph_print(G *g)
 {

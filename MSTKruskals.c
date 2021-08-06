@@ -1,4 +1,4 @@
-#include<algorithm>
+
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct Edge E;
@@ -38,6 +38,8 @@ void QuickSort(E *Graph, int startingIndex, int endingIndex)
         QuickSort(Graph, pivitIndex + 1, endingIndex);
     }
 }
+
+
 int Find(int i, int *parent)
 {
     if (parent[i] == -1)
@@ -45,6 +47,8 @@ int Find(int i, int *parent)
         
     return Find(parent[i], parent);
 }
+
+
 void Union(int u, int v, int *parent)
 {
     int s1 = Find(u, parent);
@@ -54,6 +58,8 @@ void Union(int u, int v, int *parent)
         parent[s2] = s1;
     }
 }
+
+
 void Sort(E *Graph, int edgeSize)
 {
     QuickSort(Graph, 0, edgeSize - 1);
@@ -61,7 +67,7 @@ void Sort(E *Graph, int edgeSize)
 
 int KruskalMST(E *Graph, int edgeSize)
 {
-    int *parent = new (int, edgeSize);
+    int *parent = new (int, edgeSize); // number edges
     int minCost = 0;
 
     // as per the concept of DSU 
@@ -79,7 +85,7 @@ int KruskalMST(E *Graph, int edgeSize)
         {
             minCost += weight;
             Union(u, v, parent);
-            printf("%d-[%d]->%d\n", u,weight,v);
+            printf("%d-[%d]-%d\n", u,weight,v);
         }
     }
 
